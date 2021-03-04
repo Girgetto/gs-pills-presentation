@@ -16,12 +16,7 @@ window.onload = function () {
           ? "error while parsing"
           : dom.getElementsByTagName("content:encoded")[0].textContent;
 
-      var converter = new showdown.Converter({ tables: true }),
-        html = converter.makeHtml(lastPill);
-      document.getElementById("content").innerHTML = html;
-      document.querySelectorAll("pre code").forEach((block) => {
-        hljs.highlightBlock(block);
-      });
+      setContent(lastPill);
     },
   });
   document.getElementById("header-image").src =

@@ -31,9 +31,7 @@ ul {
   -webkit-text-stroke: 1px black;
 }
 
-.basic,
-.pro,
-.advanced {
+.pills-card {
   box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.22);
   border: 2px solid #eee;
   padding: 20px;
@@ -124,9 +122,10 @@ ul {
 
 .links {
   width: 80%;
-  display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .advanced,
