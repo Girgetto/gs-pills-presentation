@@ -1,8 +1,3 @@
-/**
- * This function is call each time a link is clicked to render the related markdown
- *
- * @param  {string} url - Path of the Readme to render
- */
 function setContent(pillReadme) {
   document.getElementById("secret").innerHTML = pillReadme.includes(
     "Merging arrays"
@@ -12,7 +7,6 @@ function setContent(pillReadme) {
       <div class="speech-bubble-felipe">Poco se habla del merging arrays</div>
       </div>`
     : ``;
-
   var converter = new showdown.Converter({ tables: true }),
     html = converter.makeHtml(pillReadme);
 

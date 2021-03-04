@@ -1,13 +1,15 @@
 function createPillsLinks(pills) {
   let link = document.createElement("ul");
-  pills.forEach((pill) => {
+  for (let index = 0; index < pills.length; index++) {
+    const pill = pills[index];
+
     let li = document.createElement("li");
     li.setAttribute(
       "onClick",
-      `setContent('pillReadme')` // TODO: add pill README string
+      `setContent(${pill.textContent})`
     );
     li.innerHTML += pill.name;
     link.appendChild(li);
-  });
-  document.querySelector("." + level).appendChild(link);
+  }
+  document.querySelector(".pills-card").appendChild(link);
 }

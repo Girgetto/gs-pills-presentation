@@ -3,7 +3,7 @@ const images = ["./assets/img/Carlos.png", "./assets/img/Felipe.png"];
 window.onload = function () {
   $.ajax({
     type: "GET",
-    url: "https://girgetto.github.io/js-pills/rss.xml",
+    url: "https://guidesmiths.github.io/js-pills/rss.xml",
     dataType: "xml",
     success: function (xml) {
       const parser = new DOMParser();
@@ -11,12 +11,13 @@ window.onload = function () {
       const xmlStr = serializer.serializeToString(xml);
       const dom = parser.parseFromString(xmlStr, "application/xml");
 
-      const lastPill =
+      const pills =
         dom.documentElement.nodeName == "parsererror"
           ? "error while parsing"
-          : dom.getElementsByTagName("content:encoded")[0].textContent;
+          : dom.getElementsByTagName("content:encoded");
 
-      setContent(lastPill);
+      const [lastPill] = pills;
+      setContent(lastPill.textContent);
     },
   });
   document.getElementById("header-image").src =
