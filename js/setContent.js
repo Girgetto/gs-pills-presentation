@@ -7,6 +7,7 @@ function setContent(pillReadme) {
       <div class="speech-bubble-felipe">Poco se habla del merging arrays</div>
       </div>`
     : ``;
+
   var converter = new showdown.Converter({ tables: true }),
     html = converter.makeHtml(pillReadme);
 

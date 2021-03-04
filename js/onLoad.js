@@ -18,6 +18,7 @@ window.onload = function () {
 
       const [lastPill] = pills;
       setContent(lastPill.textContent);
+      createPillsLinks(pills);
     },
   });
   document.getElementById("header-image").src =
